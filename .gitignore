@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.Python
+env/
+venv/
+ENV/
+*.sqlite3
+*.db
+*.env
+templates/
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# System
+.DS_Store
+Thumbs.db
+
+
+# Logs
+*.log
+
+# Dotenv
+.env
+
+# PyInstaller
+dist/
+build/
+
+# Pydantic cache
+*.pydantic
+
+# Byte-compiled
+*.pyc
