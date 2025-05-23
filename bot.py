@@ -34,8 +34,17 @@ async def handle_all_messages(message: types.Message):
 
 @dp.callback_query()
 async def handle_buttons(callback: types.CallbackQuery):
+    user_id = callback.from_user.id
+
     if callback.data == "get_vpn":
-        await callback.message.answer("В разработке")
+        if db.is_allowed_user(user_id):
+            await callback.message.answer("✅ Вы допущены. Конфигурация в обработке.")
+            # api to 3x-ui
+        else:
+            await callback.message.answer("⛔ Доступ запрещён.")
+
+    elif callback.data == "about":
+        await callback.message.answer("Это бот для получения VPN ключей.")
 
 
 async def main():
